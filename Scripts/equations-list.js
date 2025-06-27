@@ -129,6 +129,7 @@ function initResolution()
         {label: 'Quality', min: 100, max: 5000}).on(
             'change', () =>
         {
+            if(isQualityDynamic.value) return;
             if(qualityUpdateTimeout) clearTimeout(qualityUpdateTimeout);
             qualityUpdateTimeout = setTimeout(() => updateGraph(), 50);
         }
