@@ -36,7 +36,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Build App
-        run: npm run build
+        run: sudo npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
