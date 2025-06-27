@@ -33,10 +33,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          check-latest: true
+      - name: Upgrade npm
+        run: npm install -g npm@latest
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
       - name: Build App
-        run: sudo npm run build
+        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
